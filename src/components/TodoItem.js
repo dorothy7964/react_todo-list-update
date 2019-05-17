@@ -6,7 +6,7 @@ class TodoItem extends Component {
     return(
       <div className="todoItem">
         <div className="remove">&times;</div>
-        <div className="text">text</div>
+        <div className="todo-text checked">text</div>
         <div className="check-mark">&#x2713;</div>
       </div>
     );

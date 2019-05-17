@@ -1,3 +1,44 @@
 .todoItem {
-  
+  user-select: none;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.todoItem + .todoItem {
+  border-top: 1px solid lightgray;
+}
+
+.todoItem:hover {
+  background-color: #e9f4fd;
+}
+
+.remove {
+  opacity: 0;
+  color: crimson;
+  font-weight: 800;
+}
+
+.todoItem:hover .remove {
+  opacity: 1;
+}
+
+.todo-text {
+  flex: 1;
+  margin: 0 1rem;
+  word-break: break-all;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.check-mark {
+  line-height: 1rem;
+  color : #228BD2;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
