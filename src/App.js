@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import TodoTemplate from './components/TodoTemplate';
+import TodoItemList from './components/TodoItemList';
+import Form from './components/Form';
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +10,13 @@ class App extends Component {
 
   render() {
     return(
-      <div>App</div>
+      <TodoTemplate
+        form={(
+          <Form />
+        )}
+      >
+        <TodoItemList />
+      </TodoTemplate>
     );
   }
 }
