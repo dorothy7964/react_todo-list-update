@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+}
+
+.form input {
+  flex: 1;
+  border-style: none;
+  outline: none;
+  border-bottom: 1px solid #228be6;
+  font-size: 1.25rem;
+}
+
+.create-button {
+  margin-left: 1rem;
+  background-color: #228be6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.create-button:hover {
+  background: #228BD2;
+}
