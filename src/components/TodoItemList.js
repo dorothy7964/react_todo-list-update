@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
-const TodoItemList = (props) => {
-  return (
-    <div>TodoItemList</div>
-  )
+class TodoItemList extends Component {
+  render() {
+    return(
+      <div>
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+      </div>
+    );
+  }
 }
 
 export default TodoItemList;
