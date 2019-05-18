@@ -16,11 +16,11 @@ class App extends Component {
       color : 'black'
     }, {
       text : '리액트 소개 02',
-      checked : false,
+      checked : true,
       color : 'black'
     }, {
       text : '리액트 소개 03',
-      checked : true,
+      checked : false,
       color : 'black'
     }]
   }
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   render() {
-    const {input} = this.state;
+    const {input, todos} = this.state;
 
     const {
       handleChange,
@@ -65,7 +65,9 @@ class App extends Component {
           />
         )}
       >
-        <TodoItemList />
+        <TodoItemList
+          todos={todos}
+        />
       </TodoTemplate>
     );
   }

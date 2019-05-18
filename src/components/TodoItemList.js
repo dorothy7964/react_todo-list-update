@@ -3,11 +3,20 @@ import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
   render() {
+    const {todos} = this.props;
+
+    const todoItemList = todos.map(
+      (value, index) => (
+        <TodoItem
+          key={index}
+          value={value}
+        />
+      )
+    );
+
     return(
       <div>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {todoItemList}
       </div>
     );
   }
