@@ -75,6 +75,12 @@ class App extends Component {
    });
   }
 
+  handleSelectColor = (color) => {
+    this.setState({
+      selectColor : color
+    });
+  }
+
   render() {
     const {input, selectColor, todos} = this.state;
 
@@ -83,7 +89,8 @@ class App extends Component {
       handleCreate,
       handleKeyPress,
       handleRemove,
-      handleToggle
+      handleToggle,
+      handleSelectColor
     } = this;
 
     return(
@@ -92,6 +99,7 @@ class App extends Component {
           <Palette
             colors={colors}
             selectColor={selectColor}
+            onSelect={handleSelectColor}
           />
         )}
         form={(
