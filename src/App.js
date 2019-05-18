@@ -29,6 +29,28 @@ class App extends Component {
     }]
   }
 
+  componentWillMount(){
+    const todos = localStorage.todos;
+    const nextId = localStorage.nextId;
+
+    if(todos){
+      this.setState({
+        todos : JSON.parse(todos),
+        nextId
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(JSON.stringify(prevState.todos) !== JSON.stringify(this.state.todos) ){
+      localStorage.todos = JSON.stringify(this.state.todos);
+    }
+
+    if(prevState.nextId !== this.state.nextId){
+        localStorage.nextId = this.state.nextId;
+    }
+  }
+
   handleChange = (e) => {
     this.setState({
       input : e.target.value
