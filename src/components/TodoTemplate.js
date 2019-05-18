@@ -1,10 +1,14 @@
 import React from 'react';
 import './TodoTemplate.css';
 
-const TodoTemplate = ({form, children}) => {
+const TodoTemplate = ({palette,form,children}) => {
   return (
     <main className="todoTemplate">
       <div className="todo-title">오늘 할 일</div>
+
+      <section className="palette-wrapper">
+        {palette}
+      </section>
 
       <section className="form-wrapper">
         {form}

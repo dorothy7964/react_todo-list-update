@@ -4,6 +4,9 @@ import update from 'react-addons-update';
 import TodoTemplate from './components/TodoTemplate';
 import TodoItemList from './components/TodoItemList';
 import Form from './components/Form';
+import Palette from './components/Palette';
+
+const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
 
 class App extends Component {
 
@@ -73,7 +76,7 @@ class App extends Component {
   }
 
   render() {
-    const {input, todos} = this.state;
+    const {input, selectColor, todos} = this.state;
 
     const {
       handleChange,
@@ -85,6 +88,12 @@ class App extends Component {
 
     return(
       <TodoTemplate
+        palette={(
+          <Palette
+            colors={colors}
+            selectColor={selectColor}
+          />
+        )}
         form={(
           <Form
             value={input}

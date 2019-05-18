@@ -21,6 +21,11 @@
   color: white;
 }
 
+.palette-wrapper {
+  padding: 1rem;
+  background-color: #f1f3f5;
+}
+
 .form-wrapper {
   padding: 1rem;
   border-bottom: 1px solid lightgray;
