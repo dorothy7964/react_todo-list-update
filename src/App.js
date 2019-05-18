@@ -12,15 +12,15 @@ class App extends Component {
     input: '',
     selectColor : 'balck',
     todos: [{
-      text : '리액트 소개 01',
+      text : 'React',
       checked : false,
       color : 'black'
     }, {
-      text : '리액트 소개 02',
+      text : 'immutability Helpers',
       checked : true,
       color : 'black'
     }, {
-      text : '리액트 소개 03',
+      text : 'react-addons-update',
       checked : false,
       color : 'black'
     }]
@@ -62,6 +62,16 @@ class App extends Component {
     });
   }
 
+  handleToggle = (selectKey, checked) => {
+    this.setState({
+      todos: update(this.state.todos, {
+       [selectKey]: {
+          checked : {$set: !checked}
+       }
+      })
+   });
+  }
+
   render() {
     const {input, todos} = this.state;
 
@@ -70,6 +80,7 @@ class App extends Component {
       handleCreate,
       handleKeyPress,
       handleRemove,
+      handleToggle
     } = this;
 
     return(
@@ -86,6 +97,7 @@ class App extends Component {
         <TodoItemList
           todos={todos}
           onRemove={handleRemove}
+          onToggle={handleToggle}
         />
       </TodoTemplate>
     );

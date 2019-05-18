@@ -3,11 +3,11 @@ import './TodoItem.css';
 
 class TodoItem extends Component {
   render() {
-    const {selectKey,onRemove} = this.props;
+    const {selectKey,onRemove,onToggle} = this.props;
     const {text,checked} = this.props.value;
 
     return(
-      <div className="todoItem">
+      <div className="todoItem" onClick={() => onToggle(selectKey,checked)}>
         <div className="remove" onClick={(e) => {
             e.stopPropagation(); // onToggle 이 실행되지 않도록 함
             onRemove(selectKey)}
