@@ -10,6 +10,7 @@ class App extends Component {
   state = {
     nextId : 3,
     input: '',
+    selectColor : 'balck',
     todos: [{
       text : '리액트 소개 01',
       checked : false,
@@ -31,11 +32,18 @@ class App extends Component {
     });
   }
 
-  handleCreate = (todo) => {
+  handleCreate = () => {
+    const {input,selectColor} = this.state;
+    const data = {
+      text : input,
+      checked : false,
+      color : selectColor,
+    }
+
     this.setState({
+      nextId : this.state.nextId + 1,
       input : '',
-      todos : update(this.state.todos, { $push : [todo] }),
-      nextId : this.state.nextId + 1
+      todos : update(this.state.todos, { $push : [data] }),
     });
   }
 
