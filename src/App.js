@@ -39,12 +39,19 @@ class App extends Component {
     });
   }
 
+  handleKeyPress = (e) => {
+    if(e.charCode === 13){
+      this.handleCreate();
+    }
+  }
+
   render() {
     const {input} = this.state;
 
     const {
       handleChange,
       handleCreate,
+      handleKeyPress,
     } = this;
 
     return(
@@ -54,10 +61,10 @@ class App extends Component {
             value={input}
             onChange={handleChange}
             onCreate={handleCreate}
+            onKeyPress={handleKeyPress}
           />
         )}
       >
-      {this.state.nextId}
         <TodoItemList />
       </TodoTemplate>
     );
