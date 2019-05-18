@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import update from 'react-addons-update';
+
 import TodoTemplate from './components/TodoTemplate';
 import TodoItemList from './components/TodoItemList';
 import Form from './components/Form';
@@ -29,11 +31,20 @@ class App extends Component {
     });
   }
 
+  handleCreate = (todo) => {
+    this.setState({
+      input : '',
+      todos : update(this.state.todos, { $push : [todo] }),
+      nextId : this.state.nextId + 1
+    });
+  }
+
   render() {
     const {input} = this.state;
 
     const {
       handleChange,
+      handleCreate,
     } = this;
 
     return(
@@ -42,9 +53,11 @@ class App extends Component {
           <Form
             value={input}
             onChange={handleChange}
+            onCreate={handleCreate}
           />
         )}
       >
+      {this.state.nextId}
         <TodoItemList />
       </TodoTemplate>
     );
