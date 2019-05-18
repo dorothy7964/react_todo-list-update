@@ -10,7 +10,7 @@ const Form = ({value, onChange, onCreate, onKeyPress, color}) => {
         onKeyPress={onKeyPress}
         style={{color}}
       />
-    <div className="create-button" onClick={()=> onCreate(value)}>
+    <div className="create-button" onClick={onCreate}>
       추가
     </div>
     </div>

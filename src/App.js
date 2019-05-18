@@ -17,15 +17,15 @@ class App extends Component {
     todos: [{
       text : 'React',
       checked : false,
-      color : 'black'
+      color : ''
     }, {
       text : 'immutability Helpers',
       checked : true,
-      color : 'black'
+      color : ''
     }, {
       text : 'react-addons-update',
       checked : false,
-      color : 'black'
+      color : ''
     }]
   }
 
@@ -36,11 +36,11 @@ class App extends Component {
   }
 
   handleCreate = () => {
-    const {input,selectColor} = this.state;
+    const {input, selectColor} = this.state;
     const data = {
       text : input,
       checked : false,
-      color : selectColor,
+      color : selectColor
     }
 
     this.setState({

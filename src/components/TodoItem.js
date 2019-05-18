@@ -7,15 +7,13 @@ class TodoItem extends Component {
     const {text,checked,color} = this.props.value;
 
     return(
-      <div className="todoItem" onClick={() => onToggle(selectKey,checked)}>
+      <div className="todoItem" style={{color}} onClick={() => onToggle(selectKey,checked)}>
         <div className="remove" onClick={(e) => {
             e.stopPropagation(); // onToggle 이 실행되지 않도록 함
             onRemove(selectKey)}
         }>&times;</div>
 
-        <div
-          className={`todo-text ${checked? 'checked' : ''}`}
-          style={{color}}>
+      <div className={`todo-text ${checked? 'checked' : ''}`}  >
           {text}
         </div>
 
