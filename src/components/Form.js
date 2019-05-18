@@ -1,10 +1,13 @@
 import React from 'react';
 import './Form.css';
 
-const Form = (props) => {
+const Form = ({value,onChange}) => {
   return (
     <div className="form">
-      <input />
+      <input
+        value={value}
+        onChange={onChange}
+      />
       <div className="create-button">추가</div>
     </div>
   )

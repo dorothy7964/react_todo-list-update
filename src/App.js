@@ -23,11 +23,26 @@ class App extends Component {
     }]
   }
 
+  handleChange = (e) => {
+    this.setState({
+      input : e.target.value
+    });
+  }
+
   render() {
+    const {input} = this.state;
+
+    const {
+      handleChange,
+    } = this;
+
     return(
       <TodoTemplate
         form={(
-          <Form />
+          <Form
+            value={input}
+            onChange={handleChange}
+          />
         )}
       >
         <TodoItemList />
