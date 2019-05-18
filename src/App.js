@@ -4,8 +4,23 @@ import TodoItemList from './components/TodoItemList';
 import Form from './components/Form';
 
 class App extends Component {
-  constructor(props) {
-      super(props);
+
+  state = {
+    nextId : 3,
+    input: '',
+    todos: [{
+      text : '리액트 소개 01',
+      checked : false,
+      color : 'black'
+    }, {
+      text : '리액트 소개 02',
+      checked : false,
+      color : 'black'
+    }, {
+      text : '리액트 소개 03',
+      checked : true,
+      color : 'black'
+    }]
   }
 
   render() {
