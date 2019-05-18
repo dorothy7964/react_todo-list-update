@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     nextId : 3,
     input: '',
-    selectColor : 'balck',
+    selectColor : '',
     todos: [{
       text : 'React',
       checked : false,
