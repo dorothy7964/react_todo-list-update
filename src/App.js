@@ -53,6 +53,15 @@ class App extends Component {
     }
   }
 
+  handleRemove = (selectKey) => {
+    this.setState({
+      nextId : this.state.nextId - 1,
+      todos : update(this.state.todos, {
+        $splice : [[selectKey, 1]]
+      })
+    });
+  }
+
   render() {
     const {input, todos} = this.state;
 
@@ -60,6 +69,7 @@ class App extends Component {
       handleChange,
       handleCreate,
       handleKeyPress,
+      handleRemove,
     } = this;
 
     return(
@@ -75,6 +85,7 @@ class App extends Component {
       >
         <TodoItemList
           todos={todos}
+          onRemove={handleRemove}
         />
       </TodoTemplate>
     );
