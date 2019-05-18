@@ -17,15 +17,15 @@ class App extends Component {
     todos: [{
       text : 'React',
       checked : false,
-      color : ''
+      color : 'black'
     }, {
       text : 'immutability Helpers',
       checked : true,
-      color : ''
+      color : 'black'
     }, {
       text : 'react-addons-update',
       checked : false,
-      color : ''
+      color : 'black'
     }]
   }
 
